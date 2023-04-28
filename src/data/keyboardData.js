@@ -1,4 +1,4 @@
-const keyboarData = {
+const keyboardData = {
   Backquote: {
     keyCode: 192,
     key: { small:  { en: '`', ru: 'ё' }, shifted: { en: '~', ru: 'Ё' } },
@@ -385,4 +385,4 @@ const keyboarData = {
   },
 };
 
-export default keyboarData;
+export default keyboardData;

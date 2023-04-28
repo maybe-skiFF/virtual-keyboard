@@ -35,8 +35,13 @@ body {
   color: chartreuse;
 }
 
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .keyboard-btn {
   height: 20px;
-  
+
   font-family: "Dosis", sans-serif;
 }
