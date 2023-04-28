@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #766a6a;
+}
+
+.container {
+  margin: 0 auto;
+
+  width: 80vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+.textarea {
+  height: 25vh;
+
+  margin-bottom: 40px;
+
+  /* resize: none; */
+
+  border: 1px solid red;
+  background: #2a1e1e;
+
+  font-family: "Dosis", sans-serif;
+  color: chartreuse;
+}
+
+.keyboard-btn {
+  height: 20px;
+  
+  font-family: "Dosis", sans-serif;
+}
