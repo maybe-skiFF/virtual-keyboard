@@ -15,6 +15,7 @@ class Keyboard {
       const button = document.createElement('div');
       button.textContent = keyboardData[key].key[this.capitalisation][this.lang];
       button.classList.add('keyboard-btn');
+      button.classList.add(`keyboard-btn-width-${keyboardData[key].width}`);
       button.dataset.code = key;
       element.appendChild(button);
     });
