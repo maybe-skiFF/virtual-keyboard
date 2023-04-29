@@ -66,6 +66,13 @@ body {
   background: #220f0f;
 }
 
+.keyboard-btn-active {
+  background: rgb(31, 20, 20);
+  color: red;
+  transform: scale(0.8);
+  border: 1px solid chartreuse;
+}
+
 .keyboard-btn-width-100 {
   width: 60px;
 }

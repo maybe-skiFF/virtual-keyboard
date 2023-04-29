@@ -23,6 +23,17 @@ class Keyboard {
     return element;
   }
 
+  shiftedButton() {
+    this.capitalisation = this.capitalisation === 'small' ? 'shifted' : 'small';
+  }
+
+  reRenderButtons() {
+    const buttons = document.querySelectorAll('.keyboard-btn');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].textContent = keyboardData[buttons[i].dataset.code].key[this.capitalisation][this.lang];
+    }
+  }
+
   render() {
     const container = document.createElement('div');
     container.classList.add('container');
@@ -34,6 +45,47 @@ class Keyboard {
     container.appendChild(keyboard);
     keyboard.appendChild(this.createButtons());
     document.body.appendChild(container);
+    const shiftKeys = document.querySelectorAll('[data-code*="Shift');
+    const capslockKey = document.querySelectorAll('[data-code="CapsLock"');
+
+    document.addEventListener('keydown', (event) => {
+      if (keyboardData[event.code]) {
+        event.preventDefault();
+        if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
+          if (!Array.from(shiftKeys).some((elem) => elem.classList.contains('keyboard-btn-active'))) {
+            this.shiftedButton();
+          }
+
+          this.reRenderButtons();
+        }
+
+        document.querySelector(`[data-code="${event.code}"]`).classList.add('keyboard-btn-active');
+
+
+      }
+    })
+
+
+
+    document.addEventListener('keyup', (event) => {
+      if (keyboardData[event.code]) {
+        event.preventDefault();
+        document.querySelector(`[data-code="${event.code}"]`).classList.remove('keyboard-btn-active');
+
+        if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
+          this.shiftedButton();
+          this.reRenderButtons();
+        }
+      }
+    })
+
+
+
+
+
+
+
+
   }
 
 
